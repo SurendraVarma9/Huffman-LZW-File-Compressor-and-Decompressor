@@ -1,0 +1,462 @@
+\documentclass[12pt,a4paper,oneside]{article}
+\usepackage{enumerate}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{tikz}
+%\usepackage[dvips]{graphicx}
+\usepackage{fancyhdr}
+\usepackage{subcaption}
+\usepackage{cite}
+\usepackage{url}
+\usepackage[utf8]{luainputenc}
+%\addto\captionsenglish{\renewcommand{\bibname}{References}}
+%\addto\captionsenglish{\renewcommand{\refname}{References}}
+%\renewcommand{\bibname}{References} 
+\renewcommand{\refname}{References}
+%\usepackage{enumitem}
+\linespread{1.2}
+\usepackage[top=1.2in, bottom=1.2in, left=1.0in, right=0.7in]{geometry}
+\begin{document}
+\pagestyle{plain}
+
+%\include{t0/title_leftAligned}
+\thispagestyle{empty}
+%{\LARGE \bf Iris Identification using Keypoint Descriptors}
+\fontsize{19}{22.8}\begin{center}
+{ \bf {Optimization of Ge-pocket JLFET : An approach to extend the scalable limit
+}}
+{\vskip 0.5cm}
+%{\LARGE \bf {Multi Camera Network}}
+%{\bf {Schemes For }}
+%{\vskip 0.5cm}
+%{\bf { Wireless Sensor
+%Networks (WSNs)}}
+\end{center}
+
+\fontsize{14}{20}
+{\vskip 0.5cm}
+\begin{center}
+{\it Project Report}
+\end{center}
+
+{\vspace*{1in}}
+\fontsize{14}{20}
+\begin{center}
+{\it Submitted by}
+\end{center}
+\fontsize{12}{20}
+\begin{center}
+{\Large {\bf Ammina Vishnu Priya}}
+\end{center}
+
+\fontsize{12}{20}
+\begin{center}
+{\large(EDM15B020)}
+\end{center}
+\vspace*{1.1in}
+%\\
+%{\vskip 0.25cm}
+
+\fontsize{14}{20}
+\begin{center}
+{\it Under the supervision of}
+\end{center}
+
+
+\fontsize{12}{20}
+\begin{center}
+{\Large {\bf Dr.K P Pradhan }}
+\end{center}
+
+{\vskip 0.1cm}
+
+\begin{center}
+\begin{table}[b]
+\begin{center}
+\begin{tabular}{c}
+\includegraphics[height=3.0cm]{Capture}
+
+\\
+\fontsize{19}{20}
+{\large	{\bf Department of Electronics \& Communication Engineering} }\\
+{\large	{\bf Indian Institute of  Information Technology,}}\\
+{\large	{\bf Design and Manufacturing, Chennai, TamilNadu, 600127, India} }\\
+\end{tabular}
+\end{center}
+\end{table}
+\end{center}
+\newpage
+\thispagestyle{empty}
+
+\pagenumbering{arabic}
+\newpage
+
+\begin{center}
+{ \bf {Abstract  
+}}
+{\vskip 0.5cm}
+%{\LARGE \bf {Multi Camera Network}}
+%{\bf {Schemes For }}
+%{\vskip 0.5cm}
+%{\bf { Wireless Sensor
+%Networks (WSNs)}}
+\end{center}
+\hspace{10mm}In this project, we have given an attempt to improve the ON state current as well as to reduce the leakage current of the conventional SOI JLT. A small pocket is introduced in the channel region resulting in three different regions namely source, pocket and channel - drain. The behaviour of SOI JLT by changing materials of source and pocket is investigated. The doping concentration of the three regions are also modified to achieve optimal ON - OFF ratio. Later all the designs are compared with the reference SOI JLT to choose the optimum one. The device with SiGe as source and Ge in the pocket region is considered as the potential model as it is predicting excellent ON - OFF ratio (order of 10^{6}).
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+ 
+\listoftables
+\newpage
+\section{Introduction}\label{sec-intro}
+
+\hspace{10mm}As the present world is running towards minimizing the size of devices and improving  performance,there is a need for scaling down the components to nano scale.Research is being carried out in reducing the size of currently used MOSFETs.However,the limit to scale down MOSFETs have come to an end.The size of the MOSFET can be reduced by removing the junction making it a junctionless transistor\textsuperscript{\cite{2}}.
+
+\newline
+\hspace{10mm}Junctionless Transistor has a uniform doping with an overlap of source and drain which represents a semiconductor bar with uniform doping with one end acting as source and the other end as drain\textsuperscript{\cite{9}}.
+However,current flow is controlled by gate.A more accurate gate electrode must be chosen with a proper work function which deplete the area under the gate leading to OFF state.This work function difference between gate electrode and semi conductor bar depletes the portion under gate completely if the film thickness is less than depletion width which results in OFF state of transistor.
+When required gate voltage is provided,channel is created thereby allowing current flow.
+
+\noindent
+\newline
+There are two types of junctionless transistors based on doping:
+\begin{itemize}
+ \item N-type JLT
+ \item P-type JLT
+\end{itemize}
+\begin{figure}[h!]
+\centering
+  \includegraphics[height=5.0cm]{ntype}
+  \caption{N type Junctionless Device schematic}
+  
+\end{figure}
+\begin{figure}[h!]
+\centering
+  \includegraphics[height=5.0cm]{ptype}
+  \caption{P type Junctionless Device schematic}
+\end{figure}
+\newpage
+
+
+
+\subsection{Types of Junctionless Transistors}
+There are two types of junctionless transistors namely
+\begin{enumerate}
+	\item Junctionless Multigate FET(MuGFET)
+	\newline
+	\textbf{Specifications:}
+	\begin{itemize}
+      \item No junction
+      \item Simpler fabrication process
+      \item Less variability
+      \item Better electrical properties
+
+\end{itemize}
+\begin{figure}[h!]
+\centering
+  \includegraphics[height=5.0cm]{bulk}
+  \caption{Schematic of BP JLT}
+\end{figure}
+	\item Bulk Planar Junctionless Transistor(BP JLT)
+	\newline
+		\textbf{Specifications:}
+	\begin{itemize}
+      \item Free field effect
+      \item Requires junction in vertical direction
+      \item Highly scalable
+
+\end{itemize}
+
+\end{enumerate}
+
+\subsection{Properties}
+\newline
+Some of the properties of junctionless transistor are as follows:
+\begin{itemize}
+  \item Drain current can be increased either by varying thickness of channel or by increasing doping concentration.
+  \item Whenever there is an increase in doping concentration and channel thickness,leakage current increases.
+  \item Controllability of gate can be managed by dielectric constant.
+  \item Short channel effects are less due to less DIBL.
+  \item With increase in gate voltage,scattering property decreases.
+  \item The degradation on mobility due to gate voltage and temperature is less when compared to conventional transistors.
+  \item Absence of doping concentration gradients.
+  \item Sub threshold slope is nearly ideal.
+
+\end{itemize}
+
+\subsection{Advantages}
+ \begin{itemize}
+  \item Mobility is more due to decrease in  electric field\textsuperscript{\cite{10}}.
+  \item No barriers
+  \item No high current driven
+  \item No implantation
+  \item No annealing
+  \item Ease of fabrication
+  \item Uses less energy than conventional transistors
+
+\end{itemize}
+
+\subsection{Disadvantages}
+\begin{itemize}
+  \item Poor control on short channel\textsuperscript{\cite{11}}
+  
+\end{itemize}
+
+\subsection{Points to be kept in mind while designing a junctionless transistor}
+ \begin{itemize}
+  \item The three important parameter for designing
+  \begin{enumerate}
+	\item [i]doping concentration of film/channel
+	\item [ii]thickness of film
+	\item[iii] work function of gate electrode
+\end{enumerate}
+  \item Higher doping concentration results in mobility degradation.
+  \item Very difficult to achieve thin film thickness.
+  \item SOI JLT requires aggressive scaling of the SOI film thickness and width to 5nm or below which is technologically challenging and results in increase in expenses.
+
+\end{itemize}
+\subsection{Applications}
+Some of the applications of JLT are:
+ \begin{enumerate}
+	\item SRAM
+	\item RF applications
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Literature Survey}\label{literature}
+
+ 
+
+		
+		  \hspace{10mm} The evolution of JLT started in the year 1925. Lilienfeld proposed about JLT for the very first time but it remained in darkness without getting fabricated\textsuperscript{\cite{10}}. However, JLT came into light in the year 2010 when Colinge fabricated a trigate JLT of 1$\mu $m channel length on silicon-on-insulator (SOI) substrate\textsuperscript{\cite{11}}. Later to overcome challenges faced by SOI technology, bulk JLT is designed. In the process of evolution, Gate-all-around(GAA) architecture\textsuperscript{\cite{2}} is demonstrated and fabricated.  Later on, JLTs are even designed with Germanium on Insulator structure.
+\\
+
+\newline
+          SOI JLT  is a low-power device controlled by gate. There are various advantages of JLT when compared to conventional transistor. The most important feature of SOI JLT is that it has less short channel effects when compared to conventional MOSFET as its effective channel length equals its gate length when it is in ON state\textsuperscript{\cite{1}}. It is preferred over MOSFETs as it can be easily fabricated\textsuperscript{\cite{3}}.
+     \\
+
+\newline
+        \hspace{10mm} Usually, the heavily doped SOI JLT remains depleted in OFF state. On drain bias, the conduction band of drain overlaps with the valence band of the channel. It allows the flow of electrons from valence band of channel to the conduction band of drain through the tunnel leaving back holes in it\textsuperscript{\cite{5}}. These holes get accumulated resulting in the parasitic bipolar junction transistor of SOI JLT in OFF state. Besides BJT behavior\textsuperscript{\cite{4}}, potential of the body increases resulting in the increase of leakage current in OFF state thereby increasing power dissipation. This leads to decrease in the performance of SOI JLT.
+        \\
+        
+\section{Motivation}\label{Motivation}
+ \hspace{10mm}Currently  the world is running towards minimizing the size of electronic devices. As the device becomes smaller and smaller, more number of transistors are to be accommodated  on a single chip which directly implies that the size of the transistor needs to go to nano scale. Research is being carried out on reducing the channel length of the present existing MOSFETs. However, the
+  maximum limit to scale down the channel length of MOSFETs is attained\textsuperscript{\cite{9}}. Further, the size of the transistor can be reduced by the introduction of novel design structures. Junction Less Transistor (JLT) is one among them. This point motivated us to work on JLT.
+  \vspace{2mm}
+\newline
+The motivation of our work is as follows:
+\begin{itemize}
+  \item To improve ON - OFF ratio of conventional SOI JLT.
+
+\end{itemize}
+         \section{Objective}\label{Objective}
+          
+\hspace{10mm}The main objective of the project is to design a junctionless transistor with Silicon on Insulator(SOI JLT) of 20nm gate length with the parameters mentioned in the Table 1.Then computing its leakage current.Further work of the project involves reduction in the leakage current thereby increasing  ON - OFF ratio by varying the doping concentrations and introducing different materials.
+
+\begin{table}[htbp]
+\caption{Parameter Specifications for Device Simulation}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+	Device Parameters &  SOI JLT & modified SOI JLT\\
+		\hline
+Gate work function & 5.1eV & 5.1eV\\
+	\hline
+	Gate oxide (SiO_2)\)thickness(T_{OX}) & 1nm & 1nm\\
+		\hline
+		Thickness of body(T_{body}) & 5nm & 5nm\\
+		\hline
+		BOX thickness (T_{box}) & 30nm & 30nm \\
+		\hline
+		Gate length(L_{g}) & 20nm & 20nm\\
+		\hline
+		Pocket length(L_{pocket}) & - & 4nm\\
+		\hline
+    Thickness of Ground Plane(T_{GP})&50nm&50nm\\
+    \hline
+   
+	Ground plane doping(N_A) & 5\times 10^{18}cm^{-3}& 5\times 10^{18}cm^{-3}\\
+
+
+
+\hline
+\end{tabular}
+\label{tab1}
+\end{center}
+\vspace{-8mm}
+\end{table}
+
+
+
+
+		
+
+\section{Methodology}\label{Methodology}
+     
+			\hspace{10mm} The cross sectional schematic shown in Figure 3 comprises of three structures. First structure is SOI JLT  with uniform doping concentration of 1$\times 10^{19}cm^{-3}$ from source to drain named as JLT. The second structure has a Ge pocket introduced in the conventional SOI JLT named as Ge pocket. The third structure has SiGe as source along with Ge pocket in the conventional SOI JLT named as SiGe source with Ge pocket. All the device parameters are listed in Table$ \Romannum{1}$. Here, $N_{SOURCE}$ represents the doping concentration of source, $N_{POCKET}$ indicates the doping concentration of pocket region introduced in the channel whereas $N_{CHANNEL - DRAIN}$ represents doping concentration from channel to drain excluding pocket region. The doping concentrations are varied in order to reduce the parasitic BJT behavior of JLT in OFF state and reduce leakage current.
+
+\begin{figure}[h]
+\centering
+\includegraphics[height=0.4\linewidth]{new1.JPG}
+\caption{Cross-sectional schematic of (a) JLT (b) Ge pocket (c) SiGe source with Ge pocket}
+\end{figure}
+           \hspace{10mm} The proposed  device is designed as per the parameters mentioned in TABLE \Romannum{1} and simulations are carried out in Silvaco TCAD\textsuperscript{\cite{8}}. The concentration dependent mobility model, Fermi Dirac and Shockley - Read - Hall recombination model and Band gap narrowing model are used in the proposed design. Band - Band(standard) tunneling model is also used.
+            \\
+          
+
+  
+
+\section{Work Done}\label{Work Done}
+	\hspace{10mm} The performance of the device is achieved by optimizing  ON - OFF ratio. This can be done by increasing ON state current and reducing OFF state current. The devices shown in Figure 3 has  V_{DS}\) = 1V and gate voltage is swept from 0V to 1V. Figure  4(a) shows the transfer characteristics of Ge pocket with varying doping concentration of source. By varying the doping concentration of  source from  0.5\times 10^{20}\)cm^{-3}\)  to 6\times 10^{20}\)cm^{-3}\), it is observed that the ON state and OFF state currents are increased along with increasing the doping concentration of source(Si). This is due to the fact that  hole quasi fermi level on changing doping concentration of source moves away from valence band in source. Varying source concentration also induces large leakage current due to overlap of valence band of source and conduction band of channel even at OFF state. Out of all design by varying N_{SOURCE}\) , 1\times 10^{20}\)cm^{-3}\)  is opted as it has optimal ON - OFF ratio as compared to other counter parts. Now the N_{SOURCE}\) is fixed to 1\times 10^{20}\)cm^{-3}\) and pocket doping  concentration is varied from 1\times 10^{19}\)cm^{-3}\) to 7\times 10^{19}\)cm^{-3}\)  as shown in Figure  4(b). Ge is used in pocket to reduce band gap. By varying pocket doping, bandgap between the conduction band and valence band is reduced. Finally, N_{POCKET}\) is chosen to be  2\times 10^{19}\)cm^{-3}\), as it has minimal leakage current. Now  N_{SOURCE}\) and  N_{POCKET}\) are fixed, change the doping concentration of Si from 1\times 10^{16}\)cm^{-3}\) to 1\times 10^{19}\)cm^{-3}\). By varying channel to drain(excluding pocket) doping concentration, electric field is improved thereby  increasing the mobility of electron. After observing the transfer characteristics shown in Figure 4(c), N_{CHANNEL - DRAIN}\)  is confined to be 1\times 10^{17}\)cm^{-3}\) for optimal device performance. The final design of Ge pocket has N_{SOURCE}\)= 1\times 10^{20}\)cm^{-3}\), N_{POCKET}\)= 2\times 10^{19}\)cm^{-3}\) and  N_{CHANNEL - DRAIN}\)=1\times 10^{17}\)cm^{-3}\) which gives better ON - OFF ratio when compared to JLT.
+	\\
+
+
+\begin{figure*}[h]
+\begin{subfigure}[h]{0.32\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Sisource.png}
+\caption{}
+\label{fig:subim1}
+\end{subfigure}
+\begin{subfigure}[h]{0.32\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Sipocket.png}
+\caption{}
+\label{fig:subim2}
+\end{subfigure}
+ \begin{subfigure}[h]{0.32\linewidth}
+ \centering
+\includegraphics[width=\linewidth]{Sichanneldrain.png}
+\caption{}
+\label{fig:subim3}
+\end{subfigure}
+
+\caption{Transfer characteristics of Ge pocket (a) varying source doping (b) varying pocket doping (c) varying channel to drain doping (pocket excluded)}
+\label{fig:image2}
+\end{figure*}
+
+\begin{table}
+\caption{Comparison of I_{ON}\) and I_{OFF} }
+\begin{center}
+ \begin{tabular}{|c|c|c|c|}
+\hline
+Current 	& JLT&  Ge pocket &  SiGe source with \\
+(A)	& 	&  &Ge pocket\\
+	\hline
+I_{ON}  & 3.03\times 10^{-5}\) & 1.59\times 10^{-4}\) & 1.58\times 10^{-4}\)\\
+	\hline
+	I_{OFF} &  1.75\times 10^{-9}\) & 5.31\times 10^{-10}\) & 2.65\times 10^{-11}\) \\
+\hline
+\end{tabular}
+\label{tab1e}
+\end{center}
+\vspace{-8mm}
+\end{table}
+\end{center}
+\\
+
+\begin{figure*}[!t]
+\begin{subfigure}[t]{0.32\linewidth}
+\centering
+\includegraphics[width=\linewidth]{SiGesource.png}
+\caption{}
+\label{fig:subim1}
+\end{subfigure}
+\begin{subfigure}[t]{0.32\linewidth}
+\centering
+\includegraphics[width=\linewidth]{SiGepocket.png}
+\caption{}
+\label{fig:subim2}
+\end{subfigure}
+ \begin{subfigure}[t]{0.32\linewidth}
+ \centering
+\includegraphics[width=\linewidth]{SiGechanneldrain.png}
+\caption{}
+\label{fig:subim3}
+\end{subfigure}
+\caption{Transfer characteristics SiGe source with Ge pocket (a) varying source doping (b) varying pocket doping (c) varying channel to drain doping (pocket excluded)}
+\label{fig:image2}
+\end{figure*}
+
+
+\begin{figure*}[h]
+\begin{subfigure}[t]{0.32\linewidth}
+\centering
+\includegraphics[width=\linewidth]{refbd.png}}
+\caption{}
+\label{fig:subim1}
+\end{subfigure}
+\begin{subfigure}[t]{0.32\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Sibd.png}}
+\caption{}
+\label{fig:subim2}
+\end{subfigure}
+ \begin{subfigure}[t]{0.32\linewidth}
+ \centering
+\includegraphics[width=\linewidth]{SiGebd.png}}
+\caption{}
+\label{fig:subim3}
+\end{subfigure}
+
+\caption{Band diagram of (a) JLT (b) Ge pocket (c) SiGe source with Ge pocket}
+\label{fig:image2}
+\end{figure*}
+
+\hspace{10mm}The same procedure is carried out for SiGe  source and Ge  pocket. SiGe is used as source as it has tunable band gap along with minimal surface free energy provided by segregation of Ge on the surface. The transfer characteristics for varied doping concentrations for N_{SOURCE}\)= 1\times 10^{20}\)cm^{-3}\)  to 5\times 10^{20}\)cm^{-3}\) is shown in Figure 5(a), N_{POCKET}\)= 5\times 10^{17}\)cm^{-3}\)  to 2\times 10^{19}\)cm^{-3}\) is shown in Figure 5(b) and N_{CHANNEL - DRAIN}\)= 1\times 10^{16}\)cm^{-3}\)  to  1\times 10^{19}\)cm^{-3}\) is shown in Figure 5(c). Along with   concentration change, mole fraction is also varied from 0 to 1 and 0.2 is chosen as Si_{0.8}Ge_{0.2}\) \cite{10}has given high ON - OFF ratio as increasing Ge content also increases leakage current. Finally, N_{SOURCE}\) =2\times 10^{20}\)cm^{-3}\), N_{POCKET}\)=5\times 10^{17}\)cm^{-3}\), N_{CHANNEL - DRAIN}\)= 1\times 10^{17}\) cm^{-3}\) is chosen with mole fraction 0.2 which gives better performance. 
+
+
+\begin{figure*}[h]
+\begin{minipage}[h]{0.48\linewidth}
+\centering
+\includegraphics[width=\textwidth]{IDvg.png}
+\caption{Comparison of $I_{D} Vs V_{GS}$ }
+\label{fig:subim1}
+\end{minipage}
+\begin{minipage}[h]{0.48\linewidth}
+\centering
+\includegraphics[width=\textwidth]{ef.png}
+\caption{Comparison of electric fields}
+\label{fig:subim2}
+\end{minipage}
+\end{figure*}
+
+\hspace{10mm}Ge pocket and SiGe source with Ge pocket are compared. SiGe source with Ge pocket is proposed as the bandgap is least as shown in Figure 6. This results in better ON - OFF ratio when compared to JLT and Ge pocket shown in Figure 7. The ON - OFF ratio for the proposed structure is 5.96\times10^{6}\). The {I_{ON}}\) is increased by nearly 5.33 times whereas {I_{OFF}}\) was reduced by 1.51\times10^{-2}\) times when compared with the 20nm SOI JLT with V_{DD}\) of 1V. Besides, it has greater electric field which results in the increase of kinetic energy, thereby increasing the free flow of electrons as shown in Figure 8. As a whole, the device with SiGe as source, Ge as pocket and Si from channel to drain (SiGe source with Ge pocket) is proposed as it has least leakage current consequently maximizing ON - OFF ratio along with reduced band gap and high electric field.
+
+\newline
+\hspace{10mm}It is observed that by changing the doping concentration of source, ON state current of the device can be fixed. Later on changing the doping concentration of pocket reduced OFF state current by a minimal amount due to reduction in bandgap. However, changing the doping concentration of both source and pocket gives a steep SS along with less threshold voltage. When the doping concentration of channel(pocket excluded) to drain is changed, leakage current has reached optimized value but with degraded SS and high threshold when compared to reference SOI JLT. The interesting thing to be noted is that by changing the doping concentrations of pocket and channel- drain, ON state current remains unchanged.
+      
+  
+
+\section{Conclusion }\label{conclusions}
+	   \hspace{10mm} We have introduced a small pocket of 4nm in the channel region in order to reduce the leakage current. In the proposed design, SiGe source is used  as it has greater compatibility and tunable bandgap and Ge in the pocket region which is also used to reduce band gap. The mosts appropriate doping concentrations are chosen to be N_{SOURCE}\) = 2\times 10^{20}\) cm^{-3} ,N_{POCKET}\) = 5\times 10^{17}\)cm^{-3}\) and N_{CHANNEL - DRAIN}\)= 1\times 10^{17}\) cm^{-3}\) to increase the performance of  JLT. The OFF state current is reduced by second order. The effect of varying doping concentrations in various regions is also demonstrated
+		\\
+\section{Future work }\label{Futurework}
+
+       \hspace{10mm} This work can be further carried out by changing the thickness of pocket, moving the pocket towards drain and source and changing the materials of source, drain and channel.
+
+{\linespread{1}
+%\begin{scriptsize}
+\small
+    \bibliographystyle{unsrt}
+   \bibliography{references}
+
+  
+%\end{scriptsize}
+
+
+
+
+
+
+%\end{scriptsize}
+
+}
+\end{document}
+
+
+
+
