@@ -1,11 +1,4 @@
-/*
- * CRLEDecoder.java
- *
- * Created on May 12, 2009, 12:01 PM
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
- */
+
 
 package CRLECompressor;
 
