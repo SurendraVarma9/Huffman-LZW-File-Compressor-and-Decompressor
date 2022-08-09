@@ -1,18 +1,8 @@
-/*
- * CPriorityQueue.java
- *
- * Created on May 12, 2009, 11:48 AM
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
- */
+
 
 package CHuffmanCompressor;
 
-/**
- *
- * @author admin
- */
+
 class CPriorityQueue{
 	final int DEFAULTMAX = 256;
 	
