@@ -1,11 +1,4 @@
-/*
- * CFileBitWriter.java
- *
- * Created on May 7, 2009, 2:08 PM
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
- */
+
 
 package FileBitIO;
 
