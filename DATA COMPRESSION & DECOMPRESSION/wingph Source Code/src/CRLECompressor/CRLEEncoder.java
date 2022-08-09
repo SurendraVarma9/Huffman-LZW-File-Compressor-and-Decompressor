@@ -1,18 +1,8 @@
-/*
- * CRLEEncoder.java
- *
- * Created on May 12, 2009, 12:02 PM
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
- */
+
 
 package CRLECompressor;
 
-/**
- *
- * @author admin
- */
+
 import java.io.*;
 
 public class CRLEEncoder implements RLEInterface{
