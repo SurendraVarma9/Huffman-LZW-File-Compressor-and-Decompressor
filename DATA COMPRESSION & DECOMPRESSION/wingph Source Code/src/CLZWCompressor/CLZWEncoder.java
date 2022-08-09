@@ -1,11 +1,4 @@
-/*
- * CLZWEncoder.java
- *
- * Created on May 7, 2009, 2:03 PM
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
- */
+
 
 package CLZWCompressor;
 
@@ -15,10 +8,7 @@ import java.util.*;
 
 import FileBitIO.CFileBitWriter;
 
-/**
- *
- * @author admin
- */
+
 public class CLZWEncoder implements LZWInterface{
     
     	private String inputFilename,outputFilename;
