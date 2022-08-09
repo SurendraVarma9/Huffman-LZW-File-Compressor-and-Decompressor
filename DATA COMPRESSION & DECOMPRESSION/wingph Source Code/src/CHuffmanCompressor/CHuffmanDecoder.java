@@ -1,18 +1,8 @@
-/*
- * CHuffmanDecoder.java
- *
- * Created on May 12, 2009, 11:45 AM
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
- */
+
 
 package CHuffmanCompressor;
 
-/**
- *
- * @author admin
- */
+
 import java.io.*;
 import FileBitIO.*;
 
