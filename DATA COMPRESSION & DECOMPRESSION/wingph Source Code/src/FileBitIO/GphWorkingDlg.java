@@ -1,8 +1,4 @@
-/*
- * GphWorkingDlg.java
- *
- * Created on May 7, 2009, 7:27 PM
- */
+
 
 package FileBitIO;
 import java.io.*;
@@ -13,10 +9,7 @@ import java.awt.event.*;
 import wingph.*;
 
 
-/**
- *
- * @author  Chinku
- */
+
 public class GphWorkingDlg extends javax.swing.JDialog implements GphGuiConstants{
     
     
