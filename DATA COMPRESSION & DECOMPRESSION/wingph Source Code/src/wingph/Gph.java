@@ -1,8 +1,4 @@
-/*
- * Gph.java
- *
- * Created on May 7, 2009, 10:31 AM
- */
+
 
 package wingph;
 
@@ -10,10 +6,7 @@ package wingph;
 import java.awt.Color;
 import java.io.*;
 
-/**
- *
- * @author  admin
- */
+
 public class Gph extends javax.swing.JFrame implements GphGuiConstants {
     
     /** Creates new form Gph */
