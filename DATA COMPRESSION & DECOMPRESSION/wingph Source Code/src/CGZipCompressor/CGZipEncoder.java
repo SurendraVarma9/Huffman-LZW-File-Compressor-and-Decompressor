@@ -1,18 +1,8 @@
-/*
- * CGZipEncoder.java
- *
- * Created on May 1, 2009, 9:20 AM
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
- */
+
 
 package CGZipCompressor;
 
-/**
- *
- * @author admin
- */
+
      /** Creates a new instance of CGZipEncoder */
  import java.io.*;
 import java.util.zip.*;
