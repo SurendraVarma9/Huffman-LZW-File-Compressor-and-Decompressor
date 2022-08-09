@@ -1,20 +1,10 @@
-/*
- * CGZipDecoder.java
- *
- * Created on May 12, 2009, 9:14 AM
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
- */
+
 
 package CGZipCompressor;
 
 import java.io.*;
 import java.util.zip.*;
-/**
- *
- * @author admin
- */
+
 public class CGZipDecoder {
     
     /** Creates a new instance of CGZipDecoder */
@@ -57,8 +47,7 @@ public class CGZipDecoder {
 	
 	
 	public boolean decodeFile()throws Exception{
-		// Ripped Code Follows
-		//Code By Kulvir Singh Bhogal and Javid Jamae
+		
 		
 		try{
 			
